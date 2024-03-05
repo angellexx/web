@@ -1,0 +1,58 @@
+<head>
+<link rel="stylesheet" href="ESTILOS.css">
+<title> 
+ZONA PERSONAL
+</title>
+<script type="text/javascript">
+    function getQueryVariable(variable) {
+        // Estoy asumiendo que query es window.location.search.substring(1);
+        // var query = "product_id=32&cat_id=1&sessionid=123";
+	var query = window.location.search.substring(1);
+        var vars = query.split("&");
+//        alert(vars);
+        for (var i=0; i < vars.length; i = i + 1) {
+            var pair = vars[i].split("="); 
+            if (pair[0] == variable) {
+                return pair[1];
+            }
+        }
+        return false;
+    }
+
+</script>
+
+</HEAD>
+<body>
+
+
+<script type="text/javascript">
+
+
+var valorVariable1 = getQueryVariable("nombre");
+if (valorVariable1 !== false) {
+            document.write("<p> Bienvenido " + valorVariable1 + " que desea hacer hoy...<p>");
+} else {
+            document.write("<p>La variable variable1 no está presente en la URL.</p>");
+        }
+
+
+
+</script>
+
+
+<form action="./web_banco3.html">
+ <label for="transfer"></label><br>
+
+ <input type="submit" id="transfer" name="transfer" value="Transferencia">
+</form> 
+<form action="./web_banco3.html">
+ <label for="hipoteca"></label><br>
+
+ <input type="submit" id="hipoteca" name="hipoteca" value="Hipoteca">
+</form> 
+<form action="./web_banco3.html">
+ <label for="ope_bolsa"></label><br>
+
+ <input type="submit" id="ope_bolsa" name="ope_bolsa" value="Operaciones en bolsa">
+</form> 
+</body>

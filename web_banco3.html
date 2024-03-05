@@ -1,0 +1,88 @@
+<head>
+<link rel="stylesheet" href="ESTILOS.css">
+<title> 
+Mi tercera Pagina Web
+</title> <!-- Esto es el titulo -->
+<script type="text/javascript">
+    function getQueryVariable(variable) {
+        // Estoy asumiendo que query es window.location.search.substring(1);
+        // var query = "product_id=32&cat_id=1&sessionid=123";
+	var query = window.location.search.substring(1);
+        var vars = query.split("&");
+//        alert(vars);
+        for (var i=0; i < vars.length; i = i + 1) {
+            var pair = vars[i].split("="); 
+            if (pair[0] == variable) {
+                return pair[1];
+            }
+        }
+        return false;
+    }
+</script>
+
+</HEAD>
+<body>
+
+
+<script type="text/javascript">
+
+
+var valorVariable1 = getQueryVariable("transfer");
+if (valorVariable1 !== false) {
+            document.write("<p> Par hacer " + valorVariable1 + " complete el formulario </p>");
+} else {
+            document.write("<p>La variable variable1 no está presente en la URL.</p>");
+        }
+
+
+</script>
+
+
+<form action="./web_banco4.html">
+<TABLE BORDER="3">
+<tr>
+<td><label for="F_name">Nombre beneficiario:</label></td>
+<td> 
+<input type="text" id="F_name" name="F_name"><br></td>
+</tr>
+
+<tr>
+<td><label for="n_cuenta">Numero de cuenta</label></td>
+<td> 
+<input type="text" id="n_cuenta" name="n_cuenta"><br></td>
+<tr>
+<td><label for="Importe">Nº Importe</label></td>
+<td> 
+<input type="text" id="Importe" name="Importe"><p></td>
+<tr>
+<td><label for="divisa">Divisa:</label></td>
+<td><input type="radio" id="divisa" name="divisa" value="EUROS">
+ <label for="divisa">EUROS</label> 
+<input type="radio" id="divisa" name="divisa" value="USD">
+ <label for="divisa">USD</label> 
+<input type="radio" id="divisa" name="divisa" value="PESOS">
+ <label for="divisa">PESOS</label> 
+</td>
+</tr>
+<tr>
+<td><label for="Impuesto">Impuesto</label></td>
+<td><input type="checkbox" id="Impuesto" name="Impuesto" value="Impuesto">IVA
+<input type="checkbox" id="Impuesto" name="Impuesto2" value="Impuesto2">IRPF</td>
+</tr>
+<tr>
+<td><label for="Targeta">Targeta</label></td>
+<td><select name="Targeta">
+  <option value="Credito" name"Credito">Crediro</option>
+  <option value="Devito" name"Devito">Devito</option></td>
+</select>
+</tr>
+
+<tr>
+<td>
+<input type="submit" value="Enviar">
+</td>
+</tr>
+</table>
+</form>
+
+</body>

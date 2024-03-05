@@ -1,0 +1,60 @@
+<head>
+<link rel="stylesheet" href="ESTILOS.css">
+<title> 
+Zona  transferencia
+</title>
+<script type="text/javascript">
+    function getQueryVariable(variable) {
+        // Estoy asumiendo que query es window.location.search.substring(1);
+        // var query = "product_id=32&cat_id=1&sessionid=123";
+	var query = window.location.search.substring(1);
+        var vars = query.split("&");
+//        alert(vars);
+        for (var i=0; i < vars.length; i = i + 1) {
+            var pair = vars[i].split("="); 
+            if (pair[0] == variable) {
+                return pair[1];
+            }
+        }
+        return false;
+    }
+</script>
+
+</HEAD>
+<body>
+
+
+<script type="text/javascript">
+
+
+var valorVariable1 = getQueryVariable("F_name");
+if (valorVariable1 !== false) {
+            document.write("<p>Se ha transferido a " + valorVariable1 + "  </p>");
+} else {
+            document.write("<p>La variable variable1 no está presente en la URL.</p>");
+        }
+
+var valorVariable1 = getQueryVariable("Importe");
+if (valorVariable1 !== false) {
+            document.write("<p> una cantidad de " + valorVariable1 + "  </p>");
+} else {
+            document.write("<p>La variable variable1 no está presente en la URL.</p>");
+        }
+
+var valorVariable1 = getQueryVariable("divisa");
+if (valorVariable1 !== false) {
+            document.write("<p>" + valorVariable1 + "  </p>");
+} else {
+            document.write("<p>La variable variable1 no está presente en la URL.</p>");
+        }
+
+
+var valorVariable1 = getQueryVariable("Targeta");
+if (valorVariable1 !== false) {
+            document.write("<p> Con tu tarjeta de " + valorVariable1 + "  </p>");
+} else {
+            document.write("<p>La variable variable1 no está presente en la URL.</p>");
+        }
+</script>
+
+</body>
